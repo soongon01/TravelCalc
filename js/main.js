@@ -8,6 +8,8 @@ var flightFee = {
     sydney: 1250000
 };
 
+var currentDest = "";
+
 function dpFlightFeeToBadge(city) {
     var fee = flightFee[city];
     fee = fee.toLocaleString("en").split(".")[0];
@@ -20,10 +22,43 @@ function dpFlightFeeToBadge(city) {
  */
 function initPage() {
     dpFlightFeeToBadge('la');
+    currentDest = "la";
 }
 /*
 라디오 버튼이 클릭될 때 마다 배지에 비행기값을 출력한다.
  */
 function displayFlightFee(city) {
     dpFlightFeeToBadge(city);
+    currentDest = city;
 }
+/*
+성인,소아 요금 100%, 유아는 20%적용
+세금 5% 추가
+ */
+function calcFlightFee() {
+    //1. 셀렉트박스에서 인원을 확보, 목적지 데이터를 확보
+    var howManyAdult = document.getElementById("adult").value;
+    var howManyKid = document.getElementById("kid").value;
+    var howManyInfant = document.getElementById("infant").value;
+
+    var flightFeeNumber = flightFee[currentDest];
+
+    //2. 성인(소아)의 항공료를 계산
+    var howManyAdultAndKid =
+        parseInt(howManyAdult) + parseInt(howManyKid);
+
+    var adultFeeSubtotal = howManyAdultAndKid * flightFeeNumber;
+    var infantFeeSubtotal =
+        Math.floor((parseInt(howManyInfant) * flightFeeNumber) * 0.2);
+
+    var grandTotal = (adultFeeSubtotal + infantFeeSubtotal) * 1.05;
+    //formatting grandTotal
+    grandTotal = grandTotal.toLocaleString("en").split(".")[0];
+
+    //3. 최종금액 표기
+    document.getElementById("totalPrice").innerHTML = grandTotal;
+}
+
+
+
+

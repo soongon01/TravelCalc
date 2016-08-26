@@ -16,11 +16,11 @@
             <label for="adult" class="col-sm-4 text-right control-label">성인</label>
             <span class="col-sm-8">
                 <select class="form-control" id="adult">
-                    <option>선택해주세요</option>
-                    <option>1명</option>
-                    <option>2명</option>
-                    <option>3명</option>
-                    <option>4명</option>
+                    <option value="0">선택해주세요</option>
+                    <option value="1">1명</option>
+                    <option value="2">2명</option>
+                    <option value="3">3명</option>
+                    <option value="4">4명</option>
                 </select>
             </span>
         </span>
@@ -28,11 +28,11 @@
             <label for="kid" class="text-right col-sm-4 control-label">소아</label>
             <span class="col-sm-8">
                 <select class="form-control" id="kid">
-                    <option>선택해주세요</option>
-                    <option>1명</option>
-                    <option>2명</option>
-                    <option>3명</option>
-                    <option>4명</option>
+                    <option value="0">선택해주세요</option>
+                    <option value="1">1명</option>
+                    <option value="2">2명</option>
+                    <option value="3">3명</option>
+                    <option value="4">4명</option>
                 </select>
             </span>
         </span>
@@ -40,16 +40,16 @@
             <label for="infant" class="col-sm-4 text-right control-label">유아</label>
             <span class="col-sm-8">
                 <select class="form-control" id="infant">
-                    <option>선택해주세요</option>
-                    <option>1명</option>
-                    <option>2명</option>
-                    <option>3명</option>
-                    <option>4명</option>
+                    <option value="0">선택해주세요</option>
+                    <option value="1">1명</option>
+                    <option value="2">2명</option>
+                    <option value="3">3명</option>
+                    <option value="4">4명</option>
                 </select>
             </span>
         </span>
         <span class="col-sm-2">
-            <button type="button" class="btn btn-primary">계산하기</button>
+            <button onclick="calcFlightFee()" type="button" class="btn btn-primary">계산하기</button>
         </span>
     </div>
 
@@ -70,7 +70,7 @@
         </span>
     </div>
     <div class="panel text-center" style="padding: 20px; margin: 20px; font-size: xx-large">
-        <span>최종 가격은 : </span><span>0</span>
+        <span>최종 가격은 : </span><span id="totalPrice">0</span>원
     </div>
 
 </div>
