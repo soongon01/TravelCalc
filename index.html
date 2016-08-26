@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header"><h1>항공요금 계산기</h1></div>
+
+    <div class="row">
+        <label class="col-sm-1 control-label">인원</label>
+        <span class="form-group col-sm-3">
+            <label for="adult" class="col-sm-4 text-right control-label">성인</label>
+            <span class="col-sm-8">
+                <select class="form-control" id="adult">
+                    <option>1명</option>
+                    <option>2명</option>
+                    <option>3명</option>
+                    <option>4명</option>
+                </select>
+            </span>
+        </span>
+        <span class="form-group col-sm-3">
+            <label for="kid" class="text-right col-sm-4 control-label">소아</label>
+            <span class="col-sm-8">
+                <select class="form-control" id="kid">
+                    <option>1명</option>
+                    <option>2명</option>
+                    <option>3명</option>
+                    <option>4명</option>
+                </select>
+            </span>
+        </span>
+        <span class="form-group col-sm-3">
+            <label for="infant" class="col-sm-4 text-right control-label">유아</label>
+            <span class="col-sm-8">
+                <select class="form-control" id="infant">
+                    <option>1명</option>
+                    <option>2명</option>
+                    <option>3명</option>
+                    <option>4명</option>
+                </select>
+            </span>
+        </span>
+        <span class="col-sm-2">
+            <button type="button" class="btn btn-primary">계산하기</button>
+        </span>
+    </div>
+
+    <div class="row">
+        <label class="col-sm-1 control-label">목적지</label>
+        <span class="col-sm-9 dest">
+            <label class="radio-inline"><input type="radio" name="dest">LA</label>
+            <label class="radio-inline"><input type="radio" name="dest">방콕</label>
+            <label class="radio-inline"><input type="radio" name="dest">시드니</label>
+        </span>
+        <span class="col-sm-2">
+        </span>
+    </div>
+
+</div>
+
+<script src="js/jquery-3.1.0.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
