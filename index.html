@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body onload="initPage()">
+<body>
 <div class="container">
     <div class="page-header"><h1>항공요금 계산기</h1></div>
 
@@ -49,22 +49,22 @@
             </span>
         </span>
         <span class="col-sm-2">
-            <button onclick="calcFlightFee()" type="button" class="btn btn-primary">계산하기</button>
+            <button id="calcBtn" type="button" class="btn btn-primary">계산하기</button>
         </span>
     </div>
 
-    <div class="row">
+    <div class="row" id="dest-div">
         <label class="col-sm-1 control-label">목적지</label>
         <span class="col-sm-3 dest">
             <label class="radio-inline">
-                <input type="radio" name="dest" onclick="displayFlightFee('la')" checked>LA</label>
+                <input type="radio" value="la" name="dest" checked>LA</label>
             <label class="radio-inline">
-                <input type="radio" name="dest" onclick="displayFlightFee('bangkok')">방콕</label>
+                <input type="radio" value="bangkok" name="dest">방콕</label>
             <label class="radio-inline">
-                <input type="radio" name="dest" onclick="displayFlightFee('sydney')">시드니</label>
+                <input type="radio" value="sydney" name="dest">시드니</label>
         </span>
         <span class="col-sm-7">
-            <p id="flightFee" class="badge">789,333원</p>
+            <p id="flightFee" class="badge"></p>
         </span>
         <span class="col-sm-2">
         </span>
