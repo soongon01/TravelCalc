@@ -13,13 +13,22 @@ $(document).ready(function() {
     var currentDest = "";
     initPage();
 
-    $(':radio').click(function (e) {
-        currentDest = e.target.value;
+    $('#testBtn').on('click', function (e) {
+        $('.form-group').first().toggle();
+    });
+
+    $(':radio').on('click', function (e) {
+        //currentDest = e.target.value;
+        currentDest = $(this).val();
         displayFlightFee(currentDest);
     });
 
-    $('#calcBtn').click(function () {
+    $('.row').first().on('click', 'button', function () {
+        //금액을 표시하는 엘레먼트의 백그라운드 컬러를 노란색으로 변경
+        $('.container').find('div').last().toggleClass('bg-yellow');
         calcFlightFee();
+
+        $('.jumbotron').fadeToggle();
     });
 
     function dpFlightFeeToBadge(city) {
@@ -71,7 +80,10 @@ $(document).ready(function() {
         grandTotal = grandTotal.toLocaleString("en").split(".")[0];
 
         //3. 최종금액 표기
-        $("#totalPrice").html(grandTotal);
+        //$("#totalPrice").html(grandTotal);
+        var grandTotalElement = $('<span>' + grandTotal + '원</span>');
+        $('.panel').find('span').last().remove();
+        $('.panel').append(grandTotalElement);
     }
 
 });
